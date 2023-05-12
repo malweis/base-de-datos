@@ -1,4 +1,4 @@
-SELECT c.nombre, c.apellido, SUM(p.precio) AS total_gastado
+SELECT c.nombre, c.apellido, SUM(fd.cantidad * p.precio) AS total_gastado
 FROM public.cliente c
 JOIN public.factura f ON c.id = f.cliente_id
 JOIN public.factura_detalle fd ON f.id = fd.factura_id
